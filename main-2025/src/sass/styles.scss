@@ -1,0 +1,182 @@
+/* main stylesheet for porchwire project */
+
+@import "node_modules/bootstrap/scss/bootstrap";
+
+@import './_variables';
+@import './_mixins';
+
+/* BS4 Overrides */
+$body-bg: $gray-800;
+$body-color: $red;
+ 
+/* Base responsive typography */
+html {
+
+    font-size: 1rem;
+
+    body {
+        color: #6C747C;
+        font-weight: 400;
+        background:
+            radial-gradient(black 15%, transparent 16%) 0 0,
+            radial-gradient(black 15%, transparent 16%) 8px 8px,
+            radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px,
+            radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
+            background-color: #121b2b;
+            background-size: 16px 16px;
+    }
+
+    .btn-info {
+        background-color: #6C747C;
+        border-color: #6C747C;
+    }
+    .btn-info:hover {
+        background-color: #030A12;
+        color: #6C747C;
+        border-color: #6C747C;
+    }
+
+    .card-header {
+        background-color: #121b2b;
+        color: #6C747C;
+    }
+
+    .card {
+        background-color: #eee;
+        color: #eee;
+        margin-bottom: 15px;
+    }
+
+    #porchwire {
+        margin: 1.5rem;
+        color: #fff;
+    }
+
+    #chat-input {
+        width: 90%;
+        margin: 15px auto;
+    }
+
+    #send-button {
+        width: 75%;
+        margin: auto;
+        margin-bottom: 15px;
+    }
+
+    #whos-online, #conversation {
+        height: 150px;
+        overflow-y: scroll;
+        padding: 0;
+        font-size: 0.85rem;
+        color: #343a40;
+
+        li {
+            border-top: solid 1px #ddd;
+            border-bottom: solid 1px #ddd;
+        }
+    }
+    
+    #audio {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    #recording-session-files {
+        audio {
+            width: 80%;
+        }
+    }
+
+    #start-record, #stop-record {
+        border-radius: 20px;
+        padding: 10px;
+    }
+
+    .download-icon {
+        margin: 0px 10px;  
+    }
+
+    #audio-control-panel {
+        background-color: #121b2b;
+        border: solid 2px;
+        border-radius: 10px;
+        box-shadow: 0px 3px 3px #000;
+        padding-top: 10px;
+    }
+
+    .audio-controls-row {
+        padding: 15px;
+    }
+
+    .audio-controls-row:nth-of-type(even) {
+        border-left: solid 1px #6C747C;
+    }
+
+    .audio-controls-icon {
+        margin: 0px 5px;
+        opacity: 0.8;
+    }
+
+    .audio-controls-icon:hover {
+        opacity: 1;
+    }
+
+    /* these are canvas elements */
+    .stream-meter {
+        width: 100%;
+        height: auto;
+        border-radius: 5px;
+    }
+}
+
+@include media-breakpoint-up(xs) {
+    html {
+        font-size: 1rem;
+
+        #porchwire {
+            margin: 1.5rem auto;
+        }
+
+        #edit-peerId, 
+        #connect-to-wrapper,
+        #connected-as-peerId {
+            text-align: center;
+
+            label {
+                text-align: left;
+            }
+        }
+
+        #user-info-column {
+            margin-top: 25px;
+        }
+
+        .main-pw-row {
+            margin: 12px;
+        }
+    }
+}
+
+@include media-breakpoint-up(sm) {
+    html {
+        font-size: 1rem;
+
+        #recording-session-files {
+            audio {
+                width: 50%;
+            }
+        }
+    }
+}
+
+@include media-breakpoint-up(md) {
+    html {
+        font-size: 1.1rem;
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    html {
+        font-size: 1.2rem;
+    }
+}
